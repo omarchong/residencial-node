@@ -3,7 +3,7 @@ const Visita = require('../models/visita.model');
 
 exports.getVisitasList = (req, res) => {
     Visita.getAllVisitas((err, visita) => {
-        console.log('Se muestran la lista de empleados');
+        console.log('Se muestran la lista de visitas');
         if (err)
             res.send(err);
         console.log('visita', visita);
