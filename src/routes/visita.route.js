@@ -10,4 +10,8 @@ router.get('/:id', visitaController.getVisitaByID);
 
 router.post('/', visitaController.create);
 
+router.put('/:id', visitaController.update);
+
+
+
 module.exports = router;

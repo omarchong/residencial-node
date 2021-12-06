@@ -1,10 +1,10 @@
 var dbConn = require('../../config/db.config');
 
-var Visita = function(visita)  {
+var Visita = function (visita) {
 
     this.id_visitante = visita.id_vistante;
     this.id_residente = visita.id_residente;
-    
+
 
 }
 
@@ -32,8 +32,8 @@ Visita.getVisitaByID = (id, result) => {
         }
     })
 }
-Visita.create = function (newVisita, result)  {
-    dbConn.query('INSERT INTO visitas SET ?', newVisita, function (err, res)  {
+Visita.create = function (newVisita, result) {
+    dbConn.query('INSERT INTO visitas SET ?', newVisita, function (err, res) {
         if (err) {
             console.log('error', err);
             result(err, null);
@@ -44,4 +44,21 @@ Visita.create = function (newVisita, result)  {
         }
     });
 };
+
+
+
+Visita.update = function (id, visita, result) {
+    dbConn.query("UPDATE  visitas SET id_visitante=?, id_residente=? WHERE id=?", [visita.id_visitante, visita.id_residente, id], function (err, res) {
+        if (err) {
+            console.log("error:", err);
+            result(null, err);
+
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+
+
 module.exports = Visita;
