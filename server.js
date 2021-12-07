@@ -17,9 +17,13 @@ app.get('/', (req, res) => {
 
 //importar ruta visitas.
 const visitaRoutes = require('./src/routes/visita.route');
+const visitedRoutes = require('./src/routes/visited.route');
+const carRoutes = require('./src/routes/car.route');
 
 //crear ruta de visitas
 app.use('/api/v1/visita', visitaRoutes);
+app.use('/api/v1/visited', visitedRoutes);
+app.use('/api/v1/car', carRoutes);
 
 app.listen(port, () => {
     console.log(`Express nodemon omar corriendo en el puerto ${port}`);
