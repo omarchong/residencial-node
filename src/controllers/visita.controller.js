@@ -49,3 +49,11 @@ exports.update = function(req, res) {
         });
     }
 };
+
+exports.delete = function(req, res) {
+    Visita.delete(req.params.id, function(err, visita){
+        if(err)
+        res.send(err);
+        res.json({error:false, message: 'Visita eliminada exitosamente'});
+    });
+};

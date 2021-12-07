@@ -12,6 +12,10 @@ router.post('/', visitaController.create);
 
 router.put('/:id', visitaController.update);
 
+router.delete('/:id', visitaController.delete);
+
+
+
 
 
 module.exports = router;

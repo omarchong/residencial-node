@@ -59,6 +59,17 @@ Visita.update = function (id, visita, result) {
     });
 };
 
+Visita.delete = function(id, result){
+    dbConn.query("DELETE FROM visitas WHERE id = ?", [id], function(err, res){
+        if(err){
+            console.log("error:", err);
+            result(null, err);
+
+        }else{
+            result(null, res)
+        }
+    });
+};
 
 
 module.exports = Visita;
