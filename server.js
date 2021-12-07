@@ -24,6 +24,13 @@ const casaRoutes = require('./src/routes/casa.routes')
 app.use('/api/v1/visita', visitaRoutes);
 app.use('/api/v1/residentes',residentesRoutes)
 app.use('/api/v1/casa', casaRoutes)
+const visitedRoutes = require('./src/routes/visited.route');
+const carRoutes = require('./src/routes/car.route');
+
+//crear ruta de visitas
+app.use('/api/v1/visita', visitaRoutes);
+app.use('/api/v1/visited', visitedRoutes);
+app.use('/api/v1/car', carRoutes);
 
 app.listen(port, () => {
     console.log(`Express nodemon corriendo en el puerto ${port}`);
