@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const dbConn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'gpds'
+    host: "database-1.cd0ithle1pfb.us-east-1.rds.amazonaws.com",
+	user: "admin",
+	password: "xvP5&$cr0R3o",
+	database: "innodb",
 });
 
 dbConn.connect(function(error){
